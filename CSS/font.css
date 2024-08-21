@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url("../font/DungGeunMo.ttf") format('woff')
+        url("../font/DungGeunMo.ttf") format('woff2');
+
+        font-weight: 300;
+}

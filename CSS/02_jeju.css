@@ -1,0 +1,106 @@
+#container{
+  width:100vw;
+  height:100%;
+  /*background-color: aqua;*/
+  background: url("../image/main9.jpg");
+}
+#jiyeogchucheon_jeju {
+  width: 57vw;
+  height: 65vw;
+  margin: 0 auto;
+  /*background-color: rgb(62, 62, 62);*/
+}
+.jeju-title-01 {
+  font-size: 3vw;
+  padding-top: 9vw;
+  margin-bottom: 2vw;
+  color:white;
+  font-weight: bold;
+}
+.jeju_menu_box1 {
+  width:17vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8vw;
+  margin-bottom: 1.5vw;
+}
+.tag {
+  text-decoration: none;
+  padding: 0.5vw 0.8vw;
+  border: 0.15vw solid rgb(255, 255, 255);
+  border-radius: 10vw;
+  font-size: 0.9vw;
+  font-weight: bold;
+  color:white;
+}
+
+#img_box_wrap{
+  width:57vw;
+  height:40vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 2vw;
+  justify-content: space-between;
+  /*background-color: antiquewhite;*/
+}
+
+#jeju_img_box_wrap2{
+  margin-bottom: 5vw;
+}
+.boxs {
+  margin: 1vw;
+}
+
+.jeju_img_box1-02 {
+  background: url(../image/beach.jpg) no-repeat;
+  background-size: cover;
+}
+
+.jeju_img_box2-02 {
+  background: url(../image/beach.jpg) no-repeat;
+  background-size: cover;
+}
+
+.jeju_img_box3-02 {
+  background: url(../image/beach.jpg) no-repeat;
+  background-size: cover;
+}
+
+.jeju_img_box4-02 {
+  background: url(../image/beach.jpg) no-repeat;
+  background-size: cover;
+}
+
+.jeju_img_box5-02 {
+  background: url(../image/beach.jpg) no-repeat;
+  background-size: cover;
+}
+
+.jeju_img_box6-02 {
+  background: url(../image/beach.jpg) no-repeat;
+  background-size: cover;
+}
+
+.imgs {
+  position: relative;
+  border-radius: 1vw;
+  width: 18vw;
+  height: 18vw;
+}
+
+.jejutxt {
+  position: absolute;
+  bottom: 0.5vw;
+  right: 0.5vw;
+  font-size: 0.9vw;
+  font-weight: 600;
+  color:black;
+  border-radius: 3vw;
+  border: 0.15vw solid black;
+  background-color: white;
+  padding: 0.2vw 0.7vw;
+  text-align: center;
+}
+

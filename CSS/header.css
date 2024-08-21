@@ -1,0 +1,178 @@
+#header{
+    z-index: 999999;
+    position: fixed;
+    width:100vw;
+    backdrop-filter: blur(10px);
+    /* background-color: #282f4e; */
+}
+#header .nav-bar{
+    position: relative;
+    width:90vw;
+    height: 6vw;
+    margin:0 auto;
+    border-bottom:1px solid rgba(255 ,255, 255, 0.1);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+    /* background-color: #04a2ce; */
+}
+.nav-bar #logo{
+    display: flex;
+    align-items: center;
+    color:#ffffff;
+    font-size: 2.2vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.nav-bar #logo::after{
+    content: '.';
+    color:#ff3c00;
+    font-size: 2.2vw;
+}
+/*menu ul ------------------------------------------*/
+.nav-bar .nav-items{
+    width:45vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #b9b9b9; */
+}
+.nav-bar .nav-items a{
+    color:#fff;
+    font-size: 1vw;
+    text-decoration: none;
+}
+.nav-bar .nav-items a:hover{
+    color: #ef400a;
+    transition: all 1s ease;
+}
+/*menu li ---------------------------------------------------------*/
+.nav-bar .nav-items .nav-item{
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    /*background-color: #ef400a;*/
+}
+.nav-bar .nav-items .nav-item2{
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    /*background-color: #04a2ce;*/
+}
+.nav-bar .nav-items .nav-item .nav-item-font{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:11vw;
+    height:3vw;
+    /* background-color: #08a62d; */
+}
+.nav-bar .nav-items .nav-item2 .nav-item-font{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:11vw;
+    height:3vw;
+    /* background-color: #08a62d; */
+}
+.nav-bar .nav-items .nav-item .nav-hover-box{
+    display: none;
+    position: absolute;
+    top:3vw;
+    left:0;
+    width:100%;
+    height:9vw;
+    padding: 1vw 0;
+    text-align: center;
+    background-color: white;
+    transition: all 1s ease;
+}
+.nav-bar .nav-items .nav-item2 .nav-hover-box2{
+    display: none;
+    position: absolute;
+    top:3vw;
+    left:0vw;
+    width:100%;
+    height:11vw;
+    padding: 1vw 0;
+    text-align: center;
+    background-color: white;
+}
+.nav-bar .nav-items .nav-item .nav-hover-box a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5vw;
+    color:black;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: #0092BC; */
+}
+.nav-bar .nav-items .nav-item2 .nav-hover-box2 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding:0.5vw;
+    color:black;
+    text-align: center;
+    /*background-color: #0092BC;*/
+}
+.menu-item:hover{
+    background-color: #0092BC;
+}
+/*Login -----------------------------------------------------------*/
+.menu_side_list{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width:20.5vw;
+    height:3vw;
+}
+.menu_side_list .login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:10vw;
+    height:100%;
+    font-size: 1vw;
+    color:white;
+    border: 0.1vw solid white;
+}
+/*My page---------------------------------------------------------*/
+.menu_side_list .my_page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:10vw;
+    height:100%;
+    font-size: 1vw;
+    color:white;
+    border: 0.1vw solid white;
+}
+/*Scroll Bar------------------------------------------------------*/
+::-webkit-scrollbar{
+    background: #fff;
+    width:11px;
+    border-radius: 2em;
+}
+::-webkit-scrollbar-thumb{
+    background:#282f4e;
+    width:100%;
+    border-radius: 2em;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#0092BC;
+    width:100%;
+    border-radius: 2em;
+}
+/*Scroll indicator Bar-------------------------------------------*/
+.scroll-indicator-container{width:100%; height:5px;}
+/*bar*/
+.scroll-indicator-bar{width:0vw; height:3px; background: #04a2ce; box-shadow: 0 3px 52px #7cc8ff, 0 1px 50px #81cbff;}

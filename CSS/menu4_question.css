@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('../font/DungGeunMo.ttf') format('truetype');
+}
+body {
+    background-color: rgba(225, 88, 88, 0.789);
+    margin: 0;
+}
+#container {
+    background-color: rgba(0, 0, 0 , 0);
+    width: 100vw;
+    height:fit-content;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin: 0 auto;
+}
+.question_box{
+    text-align: center;
+    padding-top:8vw ;
+}
+.question{
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    margin-bottom: 1vw;
+    font-family: DungGeunMo, Arial, Helvetica, sans-serif;
+}
+#question_pic {
+    width: 35vw;
+    height: auto;
+}
+.button_container {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin: 5vw 0;
+    font-family: DungGeunMo, Arial, Helvetica, sans-serif;
+}
+.question_btn {
+    background: rgb(0,172,238);
+    background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    width: 30vw;
+    height: 5vw;
+    line-height: 1vw;
+    padding: 0;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2vw;
+    font-family: "DungGeunMo";
+}
+.question_btn:hover {
+    border: 0.3vw solid rgb(0,172,238);
+    background: transparent;
+    color: rgba(2,126,251,1);
+    box-shadow: none;
+}

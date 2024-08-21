@@ -1,0 +1,230 @@
+#header{
+  position: fixed;
+  width:100%;
+  z-index: 9999;
+  }
+  #header .nav-bar{
+  position: relative;
+  width:100%;
+  height: 5.5vw;
+  background: rgba(254, 247, 247, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255 ,255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 0 2vw;
+  }
+  .nav-bar .nav-items{
+  width:40%;
+  display: flex;
+  justify-content: space-between;
+  /*background-color: #242a3d;*/
+  margin-left: 19%;
+  }
+  .nav-bar .nav-items .nav-item{
+  list-style-type: none;
+  /*background-color: #454f6d;*/
+  }
+  .nav-bar .nav-items .nav-item a{
+    color:#fff;
+    font-size: 1vw;
+    text-decoration: none;
+  }
+  .nav-bar .nav-items a:hover{
+    color: #ef400a;
+    transition: all 1s ease;
+  }
+  .nav-bar .nav-items a:not(:last-child){
+    margin-right: 50px;
+  }
+  #header .nav-bar .active{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.5);
+  }
+  .nav-bar #logo{
+    display: flex;
+    align-items: center;
+    color:#ffffff;
+    font-size: 2vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    /*background-color: #ef400a;*/
+  }
+  .nav-bar #logo::after{
+    content: '.';
+    color:#ff3c00;
+    font-size: 3rem;
+  }
+  .menu_side_list{
+    display: flex;
+    justify-content: space-between;
+    width:9%;
+    /*background-color: #81cbff;*/
+    margin-left: 20%;
+  }
+  .menu_side_list .login{
+    display: inline-block;
+    border: 1px solid #fefefe;
+    padding:0.7vw 2vw;
+    font-size: 0.9vw;
+    color:white;
+  }
+  .menu_side_list .login:hover{
+    background-color: #ffffff85;
+    transition: all 1s ease;
+  }
+    /*Scroll Bar===========================================*/
+    ::-webkit-scrollbar{
+    background: #fff;
+    width:11px;
+    border-radius: 2em;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background:#282f4e;
+    width:100%;
+    border-radius: 2em;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background:#454f6d;
+    width:100%;
+    border-radius: 2em;
+  }
+  /*Scroll indicator Bar===========================================*/
+  .scroll-indicator-container{
+    width:100%;
+    height:5px;
+  
+  }
+  /*bar*/
+  .scroll-indicator-bar{
+    background: #bbd6e5;
+    width:0%;
+    height:3px;
+    box-shadow: 0 3px 52px #a9dbff, 0 1px 50px #81cbff;
+  }
+  /* 햄버거 버튼 눌렀을 때 나오는 창 */
+  #gnb {
+        display: none;
+        width:100%;
+        height:100vh;
+        position: absolute;
+        top:0;
+        left:0;
+        padding-top: 100px;
+        color:#fff;
+        background-color: rgba(0, 0, 0, 0.673); 
+        }
+    #gnb.active{
+        display: block;
+    }
+    #gnb ul{
+        list-style-type: none;
+    }
+    #gnb li a{
+        width:100%;
+        height:100%;
+        display: flex;
+        list-style-type: none;
+        border-bottom: 1.5px solid #626262;
+        color: white;
+        padding: 20px 0 15px 30px;
+        font-size: 5rem;
+        font-weight: bold;
+    }
+    #gnb li a:hover{
+        color:orangered;
+        transition: all 1s ease;
+        cursor: pointer;
+        background-color: #ffb9b9;
+    }
+    /* 햄버거 바 애니메이션 */
+    .menu-trigger,
+    .menu-trigger span {
+    display: inline-block;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    z-index: 999;
+    }
+    /* 햄버거 바의 전체 위치 */
+    .menu-trigger {
+    position: relative;
+    width: 44px;
+    height: 37px;
+    /* background-color: aqua; */
+    z-index: 9;
+    }
+    /*햄버거 바 두께*/
+    .menu-trigger span {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    }
+  /* 햄버거 바 각각의 작대기 위치 정해주는 코드 */
+  .menu-trigger span:nth-of-type(1) {
+  top: 0;
+  }
+  .menu-trigger span:nth-of-type(2) {
+    top: 17px;
+    }
+  .menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+    }
+  /* 2th bar 사라지고,  1st 3rd bar 회전하며 X  */
+  .menu-trigger.active-1 span:nth-of-type(1) {
+    transform: translateY(18px) rotate(-45deg);
+    }
+  
+  .menu-trigger.active-1 span:nth-of-type(2) {
+    opacity: 0;
+    }
+  .menu-trigger.active-1 span:nth-of-type(3) {
+    transform: translateY(-16px) rotate(45deg);
+    }
+
+/*--=푸터 영역======================================--*/
+#footer{
+  width:100%;
+  height:fit-content;
+  background-color: #353535;
+}
+.footerWrap{
+  padding: 2vw;
+}
+#footer .logo{
+  font-size: 0.9vw;
+  color:#aaaaaa;
+}
+#footer .footer_text{
+  font-size: 0.9vw;
+  color:#aaaaaa;
+  margin-top: 1vw;
+}
+.footer_lists{
+  width:27%;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  /*background-color: #fff;*/
+}
+.footer_p_wrap{
+  color:#aaaaaa;
+  /*background-color: #ff8484;*/
+  display: flex;
+  margin-top:2vw;
+  font-size: 0.9vw;
+  justify-content: space-between;
+}

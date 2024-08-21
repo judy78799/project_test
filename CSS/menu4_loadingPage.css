@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "DungGeunMo";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 30vh;
+}
+
+.loading_title {
+    margin-bottom: 5vh;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 600;
+    line-height: 1.3333;
+    color: #333;
+    animation-name: flicker;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.progress_bar {
+    position: relative;
+    width: 50vw;
+    height: 4vh;
+    border-radius: 20px; /* 둥근 모서리 추가 */
+    background-color: rgb(167, 167, 167); /* 기존 색상 유지 */
+    overflow: hidden;
+    border: 5px solid rgb(167, 167, 167); /* 기존 색상으로 테두리 추가 */
+}
+
+.progressBar_gauge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5vw;
+    height: 100%;
+    border-radius: 20px; /* 둥근 모서리 추가 */
+    background-color: rgb(44, 228, 167); /* 기존 색상 유지 */
+    animation-name: loading_bar;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes loading_bar {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    80% {
+        width: 100%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}

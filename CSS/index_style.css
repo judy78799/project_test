@@ -1,0 +1,292 @@
+#container{
+    width:100vw;
+    height:100%;
+    /* background-color: #08a62d; */
+}
+/*bannerImg------------------------------------------------------*/
+.main_img{width:100vw;}
+.blind {display: none;}
+#imgSet {position: relative; width:100vw; height: 110vh; overflow: hidden; box-sizing: border-box;}
+#imgSet .img {position: absolute; top: 0; left: 0; overflow: hidden; width:100%;}
+#imgSet .text {position: absolute; top: 20vw; left: 0; width: 100%; text-align: center; font-size: 5vw; font-weight: 900; font-family:"Pretendard"; text-shadow: rgba(0,0,0,0.9) 1px 0 18px; color: white; word-break: keep-all; opacity: 0;}
+#imgSet .button {position: absolute; top: 57%; left: 50%; margin-left: -95px; color: white; padding: 20px 60px 20px 20px; border: 2px solid white; box-sizing: border-box; border-radius: 300px; opacity: 0; font-size: 1.5em;}
+#imgSet .button::after {content: "→"; font-size: 30px; position: absolute; top: 15px; margin-left: 10px;}
+#imgSet .button:hover {background-color: rgba(0,0,0,0.7); transition: all 0.5s ease; }
+
+#imgSet #ulSet {position: absolute; top: 50%; margin-top: -150px; right: 0; font-weight: bold; font-size: 13px; color:white;}
+#imgSet #ulSet li {position: relative; cursor: pointer; margin: 7px 0;}
+
+/* #imgSet #ulSet li .dot {margin: 0 10px;} */
+/*span 태그 바탕색 부분(투명으로)*/
+#imgSet #ulSet li>span:nth-of-type(1) {backdrop-filter: blur(15px); position: absolute; width:100%; height:100%;  box-shadow: 1px 1px 5px #ffffff6d;}
+/*span 태그 0% 100% 애니메이션 부분*/
+#imgSet #ulSet li>span:nth-of-type(2) {position: absolute; width: 0%; height: 100%; background-color: white;}
+/*전체 바 크기 몸체 부분*/
+#imgSet #ulSet li>span:nth-of-type(3) {display: block; padding: 15px 80px 15px 30px; position: relative; color: white; width:100%; height:100%; top:0; left:0;}
+#imgSet #ulSet li>span:nth-of-type(4) {position: absolute; top: 50%; margin-top: -5px; right: 0; height: 0.5vw; /*바의 높이*/ width: 60px;}
+#imgSet #ulSet li>span:nth-of-type(4) span:nth-of-type(1) {position: absolute; width: 100%; height: 100%; box-sizing: border-box; background-color: white; border-radius: 1vw;}/*전체 감싸는 바*/
+#imgSet #ulSet li>span:nth-of-type(4) span:nth-of-type(2) {position: absolute; width: 0%; height: 100%; background-color: #0092BC; box-sizing: border-box; border-radius: 1vw;}/*내부 색상 바*/
+/**/
+#imgSet .imgChange {animation: imgSlideMotion 1s forwards;}
+#imgSet .textShow {animation: textShowMotion 1s forwards;}
+#imgSet .buttonShow {animation: buttonMotion 1s forwards;}
+/* 기존 바 색상 */
+#imgSet #ulSet li.listShow>span:nth-of-type(1) {background-color: #1a1a1a;}
+/* 전체 배경색상 채워지는 애니메이션 적용 */
+#imgSet #ulSet li.listShow>span:nth-of-type(2) {animation: listMotion 1s forwards;}
+/* 폰트 색상 바꾸기 */
+#imgSet #ulSet li.listShow>span:nth-of-type(3) {color: #0092BC;}
+/* 바 색상 애니메이션*/
+#imgSet #ulSet li.listShow>span:nth-of-type(4) span:nth-of-type(2) {animation: barMotion 2s forwards;}
+
+@keyframes imgSlideMotion {from {width: 0;} to {width: 100%;}}
+@keyframes textShowMotion {from {opacity: 0; margin-top: 100px;} to {opacity: 1;  margin-top: 0px;}}
+@keyframes buttonMotion {from {opacity: 0; margin-top: 20px;} to {opacity: 1; margin-top: 0px;}}
+@keyframes listMotion {from {width: 0;} to {width: 100%;}}
+@keyframes barMotion {from {width: 0;} to {width: 100%;}}
+
+/*wave-container------------------------------------------*/
+#wave_container{
+    position: relative;
+    width:100vw;
+    height:7vw;
+    margin-top: -5vw;
+    z-index: 99999;
+    /* background-color: #000000; */
+}
+@keyframes animate{
+    0%, 100%{transform: translateY(0px);}
+    50%{transform: translateY(10px);}
+}
+#wave_container .wave{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width:100vw;
+    height:118px;
+    background: url("../image/wave.png") repeat-x;
+    background-size: 1000px 100px;
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.25s);
+}
+#wave_container .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    background-position: 400px;
+}
+#wave_container .wave#wave2{
+    z-index: 999;
+    opacity: 0.5;
+    background-position: 300px;
+}
+#wave_container .wave#wave3{
+    z-index: 998;
+    opacity: 0.2;
+    background-position: 200px;
+}
+#wave_container .wave#wave4{
+    z-index: 997;
+    opacity: 0.7;
+    background-position: 100px;
+}
+/*section 1-----------------------------------------------*/
+#sec1{
+    width:100vw;
+    height:60vw;
+    padding-top: 12vw;
+    margin:0 auto;
+    /* background-color: #0092BC; */
+}
+#sec1 .slogan{
+    font-size: 2.7vw; 
+    text-align: center; 
+    margin-bottom:2vw;
+}
+#sec1 .slogan_intro{
+    font-size: 1.2vw; 
+    text-align: center; 
+    margin-bottom: 8vw;
+}
+#sec1 .sec1_box_wrap{ 
+    display: flex; 
+    justify-content: space-between; 
+    width:80vw; height:100%; 
+    margin: 0 auto;
+}
+#sec1 .sec1_box_wrap .sec1_box{
+    /* position: relative; */
+    display: block;
+    width:18vw; 
+    height:22vw; 
+    border-radius: 0.5vw;
+}
+#sec1 .sec1_box_wrap .sec1_box:nth-child(1){
+    background: url("../image/beach4.jpg") no-repeat;
+    background-size: cover;
+}
+#sec1 .sec1_box_wrap .sec1_box:nth-child(2){
+    background: url("../image/busan.jpg") no-repeat;
+    background-size: cover;
+}
+#sec1 .sec1_box_wrap .sec1_box:nth-child(3){
+    background: url("../image/beach5.jpg") no-repeat;
+    background-size: cover;
+}
+#sec1 .sec1_box_wrap .sec1_box:nth-child(4){
+    background: url("../image/beach2.jpg") no-repeat;
+    background-size: cover;
+}
+#sec1 .sec1_box_wrap .sec1_box .box_move_btn{
+    /* position: absolute;
+    bottom: 1.5vw center; */
+    display: flex;
+    justify-content:center;
+    align-items: end;
+    text-align: center;
+    margin:17vw auto 0 auto;
+    width: 12vw;
+    padding:1vw 2.5vw;
+    font-size: 1vw;
+    color:white;
+    border: 0.15vw solid white; 
+    border-radius: 0.2vw;
+}
+#sec1 .sec1_box_wrap .sec1_box .box_move_btn:hover{
+    background-color: #00000087;
+    transition: all 1s ease;
+}
+/*section 2-----------------------------------------------*/
+#sec2{
+    width:100vw;
+    height:60vw;
+    padding-top: 5vw;
+    margin:0 auto;
+    /* background-color: #b9b9b9; */
+}
+#sec2 .sec2_slogan{
+    font-size: 2.7vw;
+    text-align: center;
+    margin-bottom:2vw;
+}
+#sec2 .sec2_sub_slogan{
+    font-size: 1.2vw;
+    text-align: center;
+    margin-bottom:8vw;
+}
+#sec2 .img_items_wrap{
+    display: flex;
+    justify-content: space-between;
+    width:80vw;
+    height:35vw;
+    margin:0 auto;
+    /* background-color: #08a62d; */
+}
+#sec2 .img_items_wrap .img_item_left{
+    display: inline-block;
+    width:35%;
+    height:100%;
+    /* border-radius: 4vw 0 0 ; */
+    background: url("../image/team_img.jpg") no-repeat;
+    background-size: cover;
+}
+#sec2 .img_items_wrap .img_box_right{
+    position: relative;
+    width:50%;
+    height:100%;
+    background-color: #ffffff;
+}
+#sec2 .img_items_wrap .img_box_right .sec2_right_text_box{
+    width:100%;
+    /* background-color: #ef400a; */
+}
+#sec2 .team_name{
+    font-size: 2vw;
+    font-weight: bold;
+    margin-bottom: 5vw;
+}
+#sec2 .team_name::after{
+    content: '.';
+    color:#ef400a;
+    font-size: 2.5vw;
+}
+#sec2 .team_info{
+    width:30vw;
+    line-height: 180%;
+    font-size: 1vw;
+}
+#sec2 .trend_box{
+    position: absolute;
+    bottom: 0vw;
+    left:-5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1vw;
+    color:white;
+    width:45vw;
+    height:8vw;
+    background-color: #454f6d;
+}
+#sec2 .trend_box_item{
+    width:14.5vw;
+    text-align: center;
+    /* background-color: #08a62d; */
+}
+#sec2 .trend_box_item h3{
+    font-size: 1.3vw;
+    margin-bottom: 1vw;
+}
+#sec2 .trend_box_item p{
+    font-size: 0.8vw;
+}
+/*아코디언-----------------------------------------------------*/
+.center_title {text-align: center; font-size: 2.5vw; padding-top: 7vw;}
+.center_sub_title {text-align: center; font-size: 1.2vw; color:#000000; margin-top: 2vw; margin-bottom: 4vw;}
+.rec_book{
+    width:750px; height:730px; margin-right: 7%;
+}
+.more {font-size: 1.3vw; font-weight: bold; margin: 30px  0 30px 0; display: block;}
+.more::after {content: ">"; color: rgb(0, 0, 0); margin-left: 10px}
+
+#sec4{width:100vw; height:60vw; /*background-color: #08a62d;*/ padding-top: 3vw;}
+#challenge {width:90vw; height: 90%; margin: 0 auto; /*background-color: #ef400a;*/}
+#challenge #challengeSet {border-top: 5px solid rgb(36, 36, 36); border-bottom: 1px solid #333;}
+#challenge #challengeSet>dt {border-top: 0.08vw solid #272727; padding: 2vw 3vw 2vw 3vw; cursor: pointer; position: relative; font-size: 1.5vw;}
+/* #challenge #challengeSet>dt::before {content: ""; position: absolute; width: 26px; height: 30px; left: 30px; background-image: url("../image/ico.png"); } */
+#challenge #challengeSet>dt:nth-of-type(1):before {background-position-x: -84px; background-position-y: -205px;}
+#challenge #challengeSet>dt:nth-of-type(2):before {background-position-x: -144px; background-position-y: -205px;}
+
+#challenge #challengeSet>dt:before {content:'❓'; font-size:2vw; padding-right: 1vw;}
+#challenge #challengeSet>dt:after {content: "→"; font-size: 2vw; position: absolute; top: 30%; right: 30px; width: 1vw; height: 3vw;  background-position-x: -85px; background-position-y:-140px; /*background-color: #0092BC;*/}
+#challenge #challengeSet>dd {padding: 1vw 3vw 0 3vw; transition: all 1s ease; animation: slideUp 1s forwards; overflow: hidden; height: 0; font-size: 1vw; line-height: 180%;}
+#challenge #challengeSet>dd.active {display: block; animation: slideDown 1s forwards;}
+#challenge #challengeSet>dt.active::before {content:'❗'; font-size:2vw; padding-right: 1vw;}
+#challenge #challengeSet>dt.active::after {content:''; background-position-y: -1vw;}
+
+#challenge #challengeSet dl dt, #challenge #challengeSet dl dd {display: inline-block; box-sizing: border-box;}
+#challenge #challengeSet dl dt {width: 13%; position: relative;}
+#challenge #challengeSet dl dt::after {content: "."; color: #999; position: absolute; right: 30px;}
+#challenge #challengeSet dl dd {width: 83%; margin: 10px 0;}
+
+@keyframes slideDown {from {height: 0px;} to{height: 288px;}}
+@keyframes slideUp {from {height: 288px;} to{height: 0px;}}
+
+#topBtn {
+    display: none; /* 페이지의 상단으로 올라가기 전까지 버튼 숨김 */
+    position: fixed; /* 어디를 이동하는 지에 상관없이 같은 위치에 존재. */
+    bottom: 3vw;
+    right: 2vw;
+    z-index: 99; /* 뭐지? 없애도 기능은 구현되는데..? */
+    font-size: 1.2vw;
+    border: none;
+    outline: none;
+    background-color:#3d3d3d;
+    color: white;
+    cursor: pointer; /* 해당 태그 위에 위치하는 마우스의 모양이 변한다(손가락 포인터 모양으로).wait-모레시계 모양으로 바뀜 */
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+#topBtn:hover {  /*호버하면 색상이 바뀌는 기능*/
+  background-color: #555;
+}

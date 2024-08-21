@@ -1,0 +1,380 @@
+body {
+    background-image: url("../image/main1.jpg"); /* 배경 이미지 경로 */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+}
+.Header_profileImage {
+    width: 2rem; /* 텍스트 높이에 맞게 설정 */
+    height: 2rem; /* 텍스트 높이에 맞게 설정 */
+    border-radius: 50%; /* 원형으로 만들기 */
+    background-color: #ccc; /* 기본 배경색 */
+    margin-right: 0.5rem; /* 텍스트와 이미지 사이의 간격 */
+    background-size: cover;
+    background-position: center;
+}
+
+#mypage_container {
+    width: 100vw; /* 전체 화면의 100% 너비 */
+    height: 80vh; /* 전체 화면의 78% 높이 */
+    background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경에 80% 투명도 */
+    border-radius: 2vw; /* 둥근 모서리 */
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+    padding: 2vw; /* 내부 여백 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 11vh;
+}
+.profile_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*gap: 2rem;*/ /* 이미지 박스와 정보 박스 사이의 간격 설정 */
+    width: 100vw; /* My Profile 섹션 내 전체 너비 */
+}
+
+.userProfile{
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    font-family: "Pretendard";
+    color:white;
+}
+.userProfile a {
+    color: white; /* 기본 링크 색상 흰색으로 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.userProfile a:visited {
+    color: white; /* 방문 후에도 색상을 흰색으로 고정 */
+}
+
+.userProfile a:active {
+    color: white; /* 클릭 시 색상을 흰색으로 고정 */
+}
+
+    /* 헤더 부분 끝 !!!  */
+
+
+
+
+.section1, .section2{
+    width: 100%; /* 전체 화면 너비 */
+    height: 20vw; /* 화면의 2등분으로 높이 설정 */
+    background-color: rgba(255, 255, 255, 0.6); /* 흰색 배경에 90% 투명도 */
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2vw; /* 내부 여백 */
+    box-sizing: border-box;
+    margin-bottom: 0vw; /* 섹션 간의 간격 설정 */
+}
+
+.mypage_hr {
+    border: 0.1vw solid #000;
+    margin-bottom: 1vw; /* hr과 아래 내용 간의 간격 설정 */
+}
+.my_profile{
+    font-family: "Pretendard";
+    font-size: 1.5em;
+}
+.profile_container {
+    display: flex;
+    align-items: stretch; /* 수직 정렬 */
+    gap: 1rem; /* 이미지 박스와 정보 박스 사이의 간격 조정 */
+    width: 100%; /* 전체 너비 */
+    height: calc(100% - 2vw); /* 섹션 높이에서 패딩을 제외한 높이 */
+    margin-top: 1vw; /* hr 태그 아래로부터의 여백 설정 */
+}
+
+.imageBox {
+    width: 10vw;
+    height:100%;
+    flex: 1; /* 이미지 박스가 나머지 공간 차지 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40%; /* 최대 너비 설정 */
+    /* background-color: blue; */
+}
+
+.imageUpload_div{
+    width: 12vw; /* 프로필 이미지 크기 (조정 가능) */
+    height: 12vw; /* 프로필 이미지 크기 (조정 가능) */
+    border-radius: 50%; /* 원형으로 만들기 */
+    background-color: #ccc; /* 기본 배경색 */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ccc; /* 테두리 */
+    position: relative; /* 버튼을 내부에서 정렬하기 위해 설정 */
+}
+.uploadButton{
+    width: 100%; /* 버튼 너비 (조정 가능) */
+    height: 100%; /* 버튼 높이 (조정 가능) */
+    border-radius: 50%; /* 원형으로 만들기 */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    display: flex; /* 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    background-color: #d96c6c; /* 배경색 (조정 가능) */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.infoBox {
+    width:20vw;
+    height: 100%;
+    position: relative; /* 자식 요소의 절대 위치 기준 설정 */
+    /* margin-left: 10vw; 전체 박스 위치 조정 (기존 여백 유지) */
+    padding-left: 2rem; /* 실선과 내용 사이의 간격 설정 */
+    border-left: 2px solid #ccc; /* 세로 실선 스타일 */
+    flex: 2; /* 정보 박스가 나머지 공간의 두 배 차지 */
+    display: flex;
+    flex-direction: column;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1.5vw;
+    color: #7a7474;
+    box-sizing: border-box;
+    /* background-color: #d96c6c; */
+}
+.infoBox_title{
+    width:9vw;
+    font-size: 1.5vw;
+    font-family: "Pretendard";
+}
+.input_container {
+    display: flex; /* 플렉스 박스를 사용하여 수평 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 1rem; /* 입력 필드와 버튼 사이의 간격 설정 */
+    margin-left: 2vw;
+}
+
+.input_container input {
+    flex: 1; /* 입력 필드가 가능한 공간을 차지하도록 설정 */
+    padding: 0.9vw;
+    font-size: 1.2vw;
+    box-sizing: border-box;
+    border: 0vw solid #ccc;
+    border-radius: 0.3rem;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.input_container button {
+    margin-left: 1rem; /* 입력 필드와 버튼 사이의 간격 */
+    font-size: 0.8rem; /* 버튼 텍스트 크기 조정 */
+}
+
+    /* Section1 끝 !! */
+
+#ImageList_Slider{
+    font-size: 1.5em;
+    font-family: "Pretendard";
+}
+.slider {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    max-height: 0; /* 기본 상태는 숨겨짐 */
+}
+.slider.open {
+    display: block;
+    max-height: 100vh; /* 슬라이딩 바가 열릴 때의 높이 설정 */
+}
+.slider_content {
+    width:90vw;
+    background-color: #f5f5f5d3;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+.cityButton_container {
+    width: 100%;
+    height: 100%;
+    display: flex; /* 버튼을 가로로 배치 */
+    justify-content: space-between;
+    font-family: "Pretendard";
+    background-color: none;
+    background-size: cover;
+}
+
+.cityButton {
+    flex: 1; /* 각 버튼이 동일한 비율로 공간을 차지하도록 설정 */
+    margin: 0.5rem; /* 버튼 사이의 간격 설정 */
+    color: white; /* 버튼 텍스트 색상 */
+    border: none; /* 버튼 테두리 제거 */
+    display: flex; /* 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    font-size: 1rem; /* 텍스트 크기 */
+    border-radius: 0.5rem; /* 버튼에 약간의 둥근 모서리 적용 */
+    overflow: hidden; /* 자식 요소가 버튼 경계를 넘지 않도록 설정 */
+    background-color: transparent; /* 기본 배경색을 투명으로 설정 */
+    position: relative;
+}
+
+.cityButton::before {
+    content: "";
+    display: block;
+    width: 300%;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgba(255, 255, 255, 0.2); /* 애니메이션 배경색 (기본 흰색 투명도 20%) */
+    border-radius: 50%; /* 둥근 모양 */
+}
+
+.cityButton:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cityButton:active::before {
+    transition: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.city_button1, .city_button2, .city_button3, .city_button4{
+    width: 30vw;
+    height: 15vh;
+    color:#fff;
+    font-family: "Pretendard";
+    font-size: 1.5em;
+    background-size: cover;
+}
+
+.city_button1{
+    background-image: url("../image/seoul.jpg");
+}
+.city_button2 {
+    background-image: url("../image/Gangreung.jpg");
+}
+
+.city_button3 {
+    background-image: url("../image/busan_GwanganDaegyo.jpg");
+}
+
+.city_button4 {
+    background-image: url("../image/Jeju.jpg");
+}
+
+.button_container {
+    position: sticky;
+    bottom: 0; /* 맨 하단에 고정 */
+    display: flex;
+    justify-content: center; /* 버튼들을 수평으로 중앙 정렬 */
+    gap: 1rem; /* 버튼 사이의 간격 조정 */
+    padding: 1rem 0; /* 상하 여백 */
+    background-color: rgba(255, 255, 255, 0.6); /* 배경색과 투명도 (section2와 동일) */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* 상단에 얇은 경계선 추가 */
+}
+    
+#modify_btn, #cancel_btn {
+    border: none; /* 버튼 테두리 제거 */
+    color: #000; /* 버튼 텍스트 색상 */
+    background: transparent; /* 버튼 배경 투명 */
+    padding: 0.5rem 1rem; /* 버튼 내부 여백 (조정 가능) */
+    font-size: 1rem; /* 텍스트 크기 (조정 가능) */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    position: relative; /* 자식 요소의 절대 위치 기준 설정 */
+    z-index: 1000; /* 다른 요소 위에 버튼이 위치하도록 설정 */
+    margin-bottom: 1rem; /* 섹션 하단에서 버튼의 여백 */
+    height: auto; /* 버튼 높이를 텍스트 크기에 맞게 자동 조정 */
+}
+
+#modify_btn:after, #cancel_btn:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+#modify_btn:hover, #cancel_btn:hover {
+    color: #000; /* 버튼 텍스트 색상 (호버 시) */
+}
+
+#modify_btn:hover:after, #cancel_btn:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+#modify_btn:active, #cancel_btn:active {
+    top: 0.5vh; /* 클릭 시 버튼이 살짝 아래로 이동 */
+}
+
+.change_btn {
+    border: none;
+    color: #000;
+    background: transparent;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+    margin-left: 0.5rem;
+}
+
+
+.change_btn:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+    -4px -4px 10px 0px #fff9,
+    -2px -2px 3px 0px #fff9,
+    4px 4px 10px 0px #0002,
+    2px 2px 3px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+.change_btn:hover {
+    color: #000; /* 버튼 텍스트 색상 (호버 시) */
+}
+
+.change_btn:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+.change_btn:active {
+    top: 0.5vh;
+}

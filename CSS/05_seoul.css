@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+#jiyeogchucheon_soule {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 30px;
+}
+
+.soule-title-01 {
+  font-size: 3vw;
+  margin-top: 4vw;
+  margin-left: 18vw;
+}
+
+.soule_menu_box1 {
+  display: flex;
+  margin-left: 17vw;
+  margin-bottom: 0.8vw;
+}
+
+.tag {
+  text-decoration: none;
+  margin-left: 1.5vw;
+  padding: 0.2vw;
+  border: 0.1vw solid black;
+  border-radius: 1vw;
+  font-size: 0.9vw;
+}
+
+.soule_img_box1-01,
+.soule_img_box2-01,
+.soule_img_box3-01,
+.soule_img_box4-01,
+.soule_img_box5-01,
+.soule_img_box6-01 {
+  text-decoration: none;
+}
+
+#soule_img_box_wrap1,
+#soule_img_box_wrap2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxs {
+  margin: 1vw;
+}
+
+.soule_img_box1-02 {
+  background: url(/JABASCRIPT/images/tree-1.jpg) no-repeat;
+  background-size: cover;
+}
+
+.soule_img_box2-02 {
+  background: url(/JABASCRIPT/images/tree-2.jpg) no-repeat;
+  background-size: cover;
+}
+
+.soule_img_box3-02 {
+  background: url(/JABASCRIPT/images/tree-3.jpg) no-repeat;
+  background-size: cover;
+}
+
+.soule_img_box4-02 {
+  background: url(/JABASCRIPT/images/tree-4.jpg) no-repeat;
+  background-size: cover;
+}
+
+.soule_img_box5-02 {
+  background: url(/JABASCRIPT/images/tree-5.jpg) no-repeat;
+  background-size: cover;
+}
+
+.soule_img_box6-02 {
+  background: url(/JABASCRIPT/images/tree-6.jpg) no-repeat;
+  background-size: cover;
+}
+
+.imgs {
+  position: relative;
+  border-radius: 1vw;
+  width: 18vw;
+  height: 18vw;
+}
+
+.souletxt {
+  position: absolute;
+  background-color: white;
+  border-radius: 3vw;
+  font-size: 0.9vw;
+  border: 0.1vw solid black;
+  padding: 0 0.3vw;
+  bottom: 0.5vw;
+  right: 0.5vw;
+  text-align: center;
+}

@@ -1,0 +1,66 @@
+/* CSS menu4_Mainpage.css */
+#container {
+    width:100vw;
+    height:100vh;
+    font-family: "DungGeunMo";
+    text-align: center;
+    margin: 0 auto;
+    background-color: #f99c9c; /* 배경색 설정 */
+    /* background: url("../image/main1.jpg") no-repeat;
+    background-size: cover; */
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100%;
+}
+/*나중에 창 크기 줄어들었을 때 같이 움직이라고 디브 박스로 묶어줌.*/
+.itembox{
+    width:50vw;
+    height: 15vw;
+    /* background-color: #3484e7; */
+}
+.title {
+    font-size: 4vw; /* 화면 크기에 비례한 폰트 사이즈 */
+    width: 100%;
+    margin-bottom: 2vw;
+    animation: float 2s infinite alternate;
+}
+
+#startButton {
+    font-size: 2.5vw; /* 화면 크기에 비례한 폰트 사이즈 */
+    cursor: pointer; /* 클릭 가능 시각적 신호 */
+    padding: 15px 30px;
+    /* 버튼 색상 */
+    color: rgb(0,172,238); /* 버튼 텍스트 색상 */
+    border: 0.5vw solid #000;
+    border-radius: 0%;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 auto;
+    transition: background-color 0.1s ease;
+}
+
+#startButton:hover {
+    border: 0.3vw solid rgb(0,172,238);
+    background: transparent;
+    color: rgba(2,126,251,1);
+    box-shadow: none; /* 호버 시 색상 변경 */
+}
+
+#startButton:active {
+    background-color: #3484e7 /* 클릭 시 색상 변경 */
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
