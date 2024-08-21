@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 성향 테스트 결과</title>
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./font/DungGeunMo.ttf">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/menu4_mainPage.css">
+    <link rel="stylesheet" href="./CSS/menu4_resultPage.css"> <!-- CSS 파일 링크 -->
+</head>
+<body>
+    <div id="container">
+        <img id="resultImage" class="result_image" src="" alt="결과 이미지">
+        
+        <div class="button_container">
+            <button id="retry_Button">다시하기</button>
+        </div>
+    </div>
+
+    <script>
+        // 저장된 점수 불러오기
+        let question1_score = parseInt(sessionStorage.getItem('question1_score') || '0', 10);
+        let question2_score = parseInt(sessionStorage.getItem('question2_score') || '0', 10);
+        let question3_score = parseInt(sessionStorage.getItem('question3_score') || '0', 10);
+        let question4_score = parseInt(sessionStorage.getItem('question4_score') || '0', 10);
+        let question5_score = parseInt(sessionStorage.getItem('question5_score') || '0', 10);
+        let question6_score = parseInt(sessionStorage.getItem('question6_score') || '0', 10);
+        let question7_score = parseInt(sessionStorage.getItem('question7_score') || '0', 10);
+        
+        // 총 점수 계산
+        let totalScore = question1_score + question2_score + question3_score + 
+                        question4_score + question5_score + question6_score + 
+                        question7_score;
+
+        // 결과 텍스트와 이미지 설정
+        let resultText;
+        let imagePath;
+
+        // 점수 범위에 따른 결과 설정
+        if (totalScore > 4) {
+            resultText = "결과 1: 당신은 식도락가";
+            imagePath = "../image/menu4_testResult1.png"; // 결과 1 이미지 경로
+        } 
+        else if (totalScore >= 1 && totalScore <= 3) {
+            resultText = "결과 2: 핫플매니아";
+            imagePath = "../image/menu4_testResult2.png"; // 결과 2 이미지 경로
+        }
+        else if (totalScore >= -3 && totalScore < 1) {
+            resultText = "결과 3: 힐링캠프";
+            imagePath = "../image/menu4_testResult3.png"; // 결과 3 이미지 경로
+        }
+        else {
+            resultText = "결과 4: 문화 인사이더";
+            imagePath = "../image/menu4_testResult4.png"; // 결과 4 이미지 경로
+        }
+
+        // 이미지와 버튼 이벤트 설정
+        document.getElementById('resultImage').src = imagePath; // 결과에 따라 이미지 변경
+        document.getElementById('retry_Button').addEventListener('click', function() {
+            sessionStorage.clear(); // 모든 점수 초기화
+            // 메인 페이지로 이동
+            window.location.href = "menu4_mainPage.html"; // 메인 페이지 URL
+        });
+    </script>
+</body>
+</html>

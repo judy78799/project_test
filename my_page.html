@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/my_page.css">
+    <title>TourUs 마이페이지</title>
+</head>
+<body>
+    <div id="container">
+
+        <header id="header">
+            <nav class="nav-bar">
+                <a href="./index.html" id="logo">TourUs</a>
+                <ul class="nav-items">
+                    <li class="nav-item">
+                        <a href="./menu4_question3.html" class="nav-item-font nav_font1">요즘 SNS 맛보기 ▼</a>
+                        <ul class="nav-hover-box">
+                            <li><a href="" class="menu-item">인스타그램</a></li>
+                            <li><a href="" class="menu-item">유튜브</a></li>
+                            <li><a href="" class="menu-item">네이버 블로그</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item2"><a href="./menu3.html" class="nav-item-font nav_font2">지역별 추천 ▼</a>
+                        <ul class="nav-hover-box2">
+                            <li><a href="" class="menu-item">제주</a></li>
+                            <li><a href="" class="menu-item">부산</a></li>
+                            <li><a href="" class="menu-item">강릉/속초</a></li>
+                            <li><a href="" class="menu-item">서울</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="./dice.html" class="nav-item-font nav_font3">랜덤 주사위</a></li>
+                    <li class="nav-item"><a href="./menu4_mainPage.html" class="nav-item-font nav_font4">나의 여행 Mbti는?</a></li>
+                </ul>
+                <div class="menu_side_list">
+                    <div class="userProfile">
+                        <div class="Header_profileImage"></div>
+                        <a href="./my_page.html"><h1 class="myPage_username">이쿠조님 환영합니다</h1></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="scroll-indicator-container">
+                <div class="scroll-indicator-bar"></div>
+            </div>
+        </header>
+
+        <div id="mypage_container">
+            <div class="section1">
+                <h1 class="my_profile">My Profile</h1>
+                <hr class="mypage_hr">
+
+                <div class="profile_container">
+                    
+                    <div class="imageBox">
+                        <input type="file" id="file_input" style="display:none;" accept="image/*">
+                        <div class="imageUpload_div">
+                            <button class="uploadButton" onclick="document.getElementById('file_input').click();"></button>
+                        </div>
+                    </div>
+
+                    <div class="infoBox">
+                        <div class="input_container">
+                            <label for="user_id" class="infoBox_title">ID</label>
+                            <input type="text" id="user_id" name="user_id" value="Ikuzo" readonly>
+                            <button class="change_btn" id="change_id">변경</button>
+                        </div><br>
+
+                        <div class="input_container">
+                            <label for="password" class="infoBox_title">비밀번호</label>
+                            <input type="password" id="password" name="password" value="12345" readonly>
+                            <button class="change_btn" id="change_password">변경</button>
+                        </div><br>
+
+                        <div class="input_container">
+                            <label for="email" class="infoBox_title">이메일</label>
+                            <input type="email" id="email" name="email" value="Ikuzo@naver.com" readonly>
+                            <button class="change_btn" id="change_email">변경</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="section2">
+                <button id="ImageList_Slider">찜 리스트 ▲</button>
+                <div class="slider" id="slider">
+                    <div class="slider_content">
+                        <div class="cityButton_container">
+                            <div class="cityButton">
+                                <button class="city_button1">서울</button>
+                            </div>
+
+                            <div class="cityButton">
+                                <button class="city_button2">강릉/속초</button>
+                            </div>
+                            
+                            <div class="cityButton">
+                                <button class="city_button3">부산</button>
+                            </div>
+
+                            <div class="cityButton">
+                                <button class="city_button4">제주</button>
+                            </div>
+
+                        </div> <!-- CityButton_container-->
+
+                    </div> <!-- Slider_content 컨테이너-->
+
+                </div> <!-- 슬라이더 -->
+
+                <div class="button_container">
+                    <button id="modify_btn">수정완료</button>
+                    <button id="cancel_btn">취소</button>
+
+            </div> <!-- Section2 -->
+
+        </div> <!--  myPage_container-->
+
+    </div> <!-- 전체 div 컨테이너 -->
+
+    <script>
+        // 이미지 업로드 후 미리보기 설정
+        const fileInput = document.getElementById('file_input');
+        const profileImage = document.querySelector('.uploadButton');
+        const header_profileImage = document.querySelector('.Header_profileImage'); // 새로운 헤더 이미지 박스
+
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileImage.style.backgroundImage = `url(${e.target.result})`;
+                    profileImage.style.backgroundSize = 'cover';
+                    profileImage.style.backgroundPosition = 'center';
+
+                    // 헤더 이미지도 업데이트
+                    header_profileImage.style.backgroundImage = `url(${e.target.result})`;
+                    header_profileImage.style.backgroundSize = 'cover';
+                    header_profileImage.style.backgroundPosition = 'center';
+
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+         // 취소 버튼 클릭 시 메인 페이지로 이동
+        document.getElementById('cancel_btn').addEventListener('click', function() {
+            window.location.href = './index.html'; // 메인 페이지의 경로
+        });
+
+        document.getElementById('ImageList_Slider').addEventListener('click', function() {
+            const slider = document.getElementById('slider');
+            const button = document.getElementById('ImageList_Slider');
+            
+            // 슬라이딩 바 열림/닫힘
+            slider.classList.toggle('open');
+            
+            // 버튼 텍스트 변경
+            if (slider.classList.contains('open')) {
+                button.textContent = '찜 리스트 ▼';
+            } else {
+                button.textContent = '찜 리스트 ▲';
+            }
+        });
+
+        document.querySelector('.city_button1').addEventListener('click', function() {
+        window.location.href = '05_seoul.html';
+    });
+
+    document.querySelector('.city_button2').addEventListener('click', function() {
+        window.location.href = '04_gang_sog.html';
+    });
+
+    document.querySelector('.city_button3').addEventListener('click', function() {
+        window.location.href = '03_busan.html';
+    });
+
+    document.querySelector('.city_button4').addEventListener('click', function() {
+        window.location.href = '02_jeju.html';
+    });
+    </script>
+</body>
+</html>

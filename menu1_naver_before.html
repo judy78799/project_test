@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴1 레이아웃</title>
+  <link rel="stylesheet" href="../css/common_style.css">
+  <style>
+    body{
+      width: 100vw;
+      height: 100vh;
+      margin: 0 0 -5vw 0 auto;
+    }
+    fieldset{
+      width: 70vw;
+      height: 70vw;
+      margin: 10vw auto;
+    }
+    legend{
+      font-size: 2.7vw;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .boxes{
+      width: 60vw;
+      height: 60vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+    .boxImg{
+      width: 100%;
+      height: 100%;
+      background-image: url(../image/beach.jpg);
+    }
+    .box{
+      display: inline-block;
+      position: relative;
+      border: 1px solid #D3D3D3;
+      width: 17vw;
+      height: 20vw;
+      border-radius: 1.5vw;
+      background: url(../image/beach.jpg) no-repeat;
+      background-size: cover;
+    }
+    .hashtagWrap{
+      position: absolute;
+      bottom: -3vw;
+      left: 0.5vw;
+      width: 90%;
+      height: 13%;
+      display: flex;
+      
+    }
+    .hashtag{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9vw;
+      color: black;
+      padding: 0.3vw 1vw;
+      border: 1px solid black;
+      border-radius: 2vw;
+      margin-right: 0.5vw;
+    }
+    .img{
+      width: 3vw;
+      height: 3vw;
+     background: url(../image/naverblog.png) no-repeat;
+     background-size: cover;
+     margin-right: 1vw;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <form action="#">
+    <fieldset>
+      <legend>
+        <div class="img"></div>   네이버 블로그   </legend>
+      <div class="boxes">
+        <a href="" class="box">
+          <div class="hashtagWrap">
+            <div class="hashtag">#잏잏잏잏잏</div>
+            <div class="hashtag">#헤헿헿헤헤</div>
+          </div>  
+        </a>
+        <a href="" class="box">
+          <div class="hashtagWrap">
+            <div class="hashtag">#잏잏잏잏잏</div>
+            <div class="hashtag">#헤헿헿헤헤</div>
+          </div>  
+        </a>
+        <a href="" class="box">
+          <div class="hashtagWrap">
+            <div class="hashtag">#잏잏잏잏잏</div>
+            <div class="hashtag">#헤헿헿헤헤</div>
+          </div>  
+        </a>
+        <a href="" class="box">
+          <div class="hashtagWrap">
+            <div class="hashtag">#잏잏잏잏잏</div>
+            <div class="hashtag">#헤헿헿헤헤</div>
+          </div>  
+        </a>
+        <a href="" class="box">
+          <div class="hashtagWrap">
+            <div class="hashtag">#잏잏잏잏잏</div>
+            <div class="hashtag">#헤헿헿헤헤</div>
+          </div>  
+        </a>
+        <a href="" class="box">
+          <div class="hashtagWrap">
+            <div class="hashtag">#잏잏잏잏잏</div>
+            <div class="hashtag">#헤헿헿헤헤</div>
+          </div>  
+        </a> 
+        </div>
+      </div>
+    </fieldset>
+
+  </form>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- Coding by royal 420 KE | youtube.com/royal420ke -->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll dice project | Royal 420 KE</title>
+    <link rel="stylesheet" href="./CSS/dice_style.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <script src="./Javascript/header.js"></script>
+</head>
+<body>
+    <div class="wrap">
+    <header id="header">
+        <nav class="nav-bar">
+                <a href="./index.html" id="logo">TourUs</a>
+                
+                    <ul class="nav-items">
+                        <li class="nav-item">
+                        <a href="./menu1_sns.html" class="nav-item-font nav_font1">요즘 SNS 맛보기 ▼</a>
+                        <ul class="nav-hover-box">
+                            <li><a href="" class="menu-item">인스타그램</a></li>
+                            <li><a href="" class="menu-item">유튜브</a></li>
+                            <li><a href="" class="menu-item">네이버 블로그</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item2"><a href="./menu3.html" class="nav-item-font nav_font2">지역별 추천 ▼</a>
+                        <ul class="nav-hover-box2">
+                            <li><a href="./02_jeju.html" class="menu-item">제주</a></li>
+                            <li><a href="./03_busan.html" class="menu-item">부산</a></li>
+                            <li><a href="./04_gang_sog.html" class="menu-item">강릉/속초</a></li>
+                            <li><a href="./05_seoul.html" class="menu-item">서울</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item"><a href="./dice.html" class="nav-item-font nav_font3">랜덤 주사위</a></li>
+                        <li class="nav-item"><a href="./menu4_mainPage.html" class="nav-item-font nav_font4">나의 여행 Mbti는?</a></li>
+                    </ul>
+                    <div class="menu_side_list">
+                    <a href="./login.html" class="login">로그인/회원가입</a>
+                    <a href="./my_page.html" class="my_page">마이페이지</a>
+                    </div>
+        </nav>
+    
+        <div class="scroll-indicator-container">
+            <div class="scroll-indicator-bar"></div>
+        </div>
+    </header>
+
+        <div class="all-contents-wrap">
+            <div class="container">
+                <div class="dice">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                </div>
+                <button class="roll">
+                    <h2>랜덤 주사위 돌리기</h2>
+                </button>
+            </div>
+            <div class="picture">
+                <img src="./image/arrow-right.svg" alt="" id="arrow">
+            </div>
+            <div class="container2">
+                <img src="../CSS/images/1.jpg" alt="주사위 이미지" id="diceImage"> 
+            </div>
+        </div>
+
+    <footer id="footer">
+        <div class="footerWrap">
+            <p class="logo">(주) 투어어스 | 팀 Ikuzo | 대표이사 박민영</p>
+            <p class="footer_text">
+            투어어스99빌딩스 | 당곡역 2번출구 247-1, 한국정보교육원 5층<br>
+            사업자등록번호 : 180-45-12345 | 관광사업자등록번호: 제2024-07호
+            </p>
+            <div class="footer_p_wrap">
+            <ul class="footer_lists">
+                <li class="footer_li">개인정보처리방침 |</li>
+                <li class="footer_li">법적고지 |</li>
+                <li class="footer_li">오시는길 |</li>
+                <li class="footer_li">고객문의 |</li>
+                <li class="footer_li">채용문의</li>
+            </ul>
+            <p>All rights reserved</p>
+            </div>
+        </div>
+        </footer>
+</div>
+<script>
+const dice = document.querySelector('.dice');
+const rollBtn = document.querySelector('.roll');
+const diceImage = document.getElementById('diceImage'); // .container2에 있는 이미지 요소 선택
+
+const randomDice = () => {
+    const random = Math.floor(Math.random() * 10);
+    if (random >= 1 && random <= 6) {
+        rollDice(random);
+    } else {
+        randomDice();
+    }
+}
+
+const rollDice = random => {
+    dice.style.animation = 'rolling 4s';
+    diceImageSrc = diceImage.src;
+    setTimeout(() => {
+        switch (random) {
+            case 1:
+                dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                diceImage.style.display = "block";
+                diceImage.style.cursor = 'pointer';
+                diceImage.src = './svg/dice1.svg'; // 이미지 변경
+                diceImage.addEventListener('click', function(){
+                    window.open('https://map.naver.com/p/entry/place/12079976?lng=128.9082081&lat=37.8054953&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh');
+                });
+                break;
+            case 2:
+                dice.style.transform = 'rotateX(-90deg) rotateY(0deg)';
+                diceImage.style.display = "block";  //이걸 여기에 넣어줘야 이미지만 깔끔하게 나옴.
+                diceImage.style.cursor = 'pointer';
+                diceImage.src = './svg/dice2.svg'; // 이미지 변경
+                diceImage.addEventListener('click', function(){
+                    window.open('https://map.naver.com/p/entry/place/13481090?lng=126.310511&lat=33.4590382&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh');
+                });
+                break;
+            case 3:
+                dice.style.transform = 'rotateX(0deg) rotateY(90deg)';
+                diceImage.style.display = "block";
+                diceImage.style.cursor = 'pointer';
+                diceImage.src = './svg/dice3.svg'; // 이미지 변경
+                diceImage.addEventListener('click', function(){
+                    window.open('https://map.naver.com/p/entry/place/12126649?lng=129.1282041&lat=35.14548&placePath=%2Fhome&entry=plt&searchType=place');
+                });
+                break;
+            case 4:
+                dice.style.transform = 'rotateX(0deg) rotateY(-90deg)';
+                diceImage.style.display = "block";
+                diceImage.style.cursor = 'pointer';
+                diceImage.src = './svg/dice4.svg'; // 이미지 변경
+                diceImage.addEventListener('click', function(){
+                    window.open('https://map.naver.com/p/entry/place/1666471524?lng=128.6093359&lat=38.1829608&placePath=%2Fhome&entry=plt&searchType=place');  //새 창이 열리도록 함.
+                });
+                break;
+            case 5:
+                dice.style.transform = 'rotateX(90deg) rotateY(0deg)';
+                diceImage.style.display = "block";
+                diceImage.style.cursor = 'pointer';
+                diceImage.src = './svg/dice5.svg'; // 이미지 변경
+                diceImage.addEventListener('click', function(){
+                    window.open('https://map.naver.com/p/search/%EA%B2%80%EB%A9%80%EB%A0%88/place/13491583?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place');
+                });
+                break;
+            case 6:
+                dice.style.transform = 'rotateX(180deg) rotateY(0deg)';
+                diceImage.style.display = "block";
+                diceImage.style.cursor = 'pointer';
+                diceImage.src = './svg/dice6.svg'; // 이미지 변경 
+                diceImage.addEventListener('click', function(){
+                    window.open('https://map.naver.com/p/entry/place/33461396?c=15.00,0,0,0,dh');
+                });
+                break;
+            default:
+                break;
+        }
+        dice.style.animation = 'none';
+    }, 4000);   //주사위 구르는 시간 4초로 세팅
+}
+    rollBtn.addEventListener('click', randomDice);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./font/DungGeunMo.ttf">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/menu4_mainPage.css">
+    <title>여행 성향테스트</title>
+</head>
+<body>
+    <div id="container">
+    <header id="header">
+        <nav class="nav-bar">
+                <a href="./index.html" id="logo">TourUs</a>
+                
+                    <ul class="nav-items">
+                        <li class="nav-item">
+                        <a href="./menu1_sns.html" class="nav-item-font nav_font1">요즘 SNS 맛보기 ▼</a>
+                        <ul class="nav-hover-box">
+                            <li><a href="" class="menu-item">인스타그램</a></li>
+                            <li><a href="" class="menu-item">유튜브</a></li>
+                            <li><a href="" class="menu-item">네이버 블로그</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item2"><a href="./menu3.html" class="nav-item-font nav_font2">지역별 추천 ▼</a>
+                        <ul class="nav-hover-box2">
+                            <li><a href="./02_jeju.html" class="menu-item">제주</a></li>
+                            <li><a href="./03_busan.html" class="menu-item">부산</a></li>
+                            <li><a href="./04_gang_sog.html" class="menu-item">강릉/속초</a></li>
+                            <li><a href="./05_seoul.html" class="menu-item">서울</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item"><a href="./dice.html" class="nav-item-font nav_font3">랜덤 주사위</a></li>
+                        <li class="nav-item"><a href="./menu4_mainPage.html" class="nav-item-font nav_font4">나의 여행 Mbti는?</a></li>
+                    </ul>
+                    <div class="menu_side_list">
+                    <a href="./login.html" class="login">로그인/회원가입</a>
+                    <a href="./my_page.html" class="my_page">마이페이지</a>
+                    </div>
+        </nav>
+    
+        <div class="scroll-indicator-container">
+            <div class="scroll-indicator-bar"></div>
+        </div>
+    </header>
+
+    <div class="wrap">
+        <div class="itembox">
+            <h1 class="title">여행 성향테스트</h1>
+            <button id="startButton">Press button to start!</button>
+        </div>
+    </div> 
+</div>
+
+<script src="./Javascript/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const startButton = document.getElementById("startButton");
+            startButton.addEventListener('click', function() {
+                window.location.href = "menu4_loadingPage.html"; // 다음 페이지로 이동
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./CSS/register.css">
+</head>
+<body>
+    <div id="container">
+        <h1>회원가입</h1>
+        <form onsubmit="return register();">
+            <span>*</span>
+            <label for="username">아이디  </label>
+            <input type="text" name="username" required><br><br>
+
+            <span>*</span>
+            <label for="password">비밀번호  </label>
+            <input type="password" name="password" required  placeholder="4자 이상"><br><br>
+
+            
+            <span>*</span>
+            <label for="name">이름  </label>
+            <input type="text" name="name" required><br><br>
+            
+            <span>*</span>
+            <label for="age">나이  </label>
+            <input type="text" name="age" required><br><br>
+
+            <label for="email">이메일  </label>
+            <input type="email" name="email" required><br><br>
+
+            <div class="btcontainer">
+                <div class="btcontainer1">
+                <input type="submit" value="회원가입">
+            </div>
+            <div class="btcontainer2">
+                <input type="reset" value="초기화">
+            </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function register() {
+            const username = document.querySelector("input[name='username']").value;
+            const password = document.querySelector("input[name='password']").value;
+            const email = document.querySelector("input[name='email']").value;
+            const name = document.querySelector("input[name='name']").value;
+            const age = document.querySelector("input[name='age']").value;
+
+            if (username === "" || password === "" || email === "" || name === "" || age ==="") {
+                alert("모든 필드를 입력해 주시기 바랍니다.");
+                return false; 
+            }
+
+            if (password.length < 4){
+                alert("비밀번호는 4자리 이상으로 설정하세요.")
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("이메일 형식을 확인해주세요.");
+                return false; 
+            }
+
+            alert("회원가입이 완료되었습니다!");
+            window.location.href = "login.html"; 
+            return true;  
+        }
+    </script>
+</body>
+</html>

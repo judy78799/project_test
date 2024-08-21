@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./font/DungGeunMo.ttf">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/menu4_question.css">
+    <title>여행 성향테스트</title>
+
+</head>
+<body>  
+    <div id="container">
+
+    <header id="header">
+        <nav class="nav-bar">
+                <a href="./index.html" id="logo">TourUs</a>
+                
+                    <ul class="nav-items">
+                        <li class="nav-item">
+                        <a href="./menu1_sns.html" class="nav-item-font nav_font1">요즘 SNS 맛보기 ▼</a>
+                        <ul class="nav-hover-box">
+                            <li><a href="" class="menu-item">인스타그램</a></li>
+                            <li><a href="" class="menu-item">유튜브</a></li>
+                            <li><a href="" class="menu-item">네이버 블로그</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item2"><a href="./menu3.html" class="nav-item-font nav_font2">지역별 추천 ▼</a>
+                        <ul class="nav-hover-box2">
+                            <li><a href="./02_jeju.html" class="menu-item">제주</a></li>
+                            <li><a href="./03_busan.html" class="menu-item">부산</a></li>
+                            <li><a href="./04_gang_sog.html" class="menu-item">강릉/속초</a></li>
+                            <li><a href="./05_seoul.html" class="menu-item">서울</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item"><a href="./dice.html" class="nav-item-font nav_font3">랜덤 주사위</a></li>
+                        <li class="nav-item"><a href="./menu4_mainPage.html" class="nav-item-font nav_font4">나의 여행 Mbti는?</a></li>
+                    </ul>
+                    <div class="menu_side_list">
+                    <a href="./login.html" class="login">로그인/회원가입</a>
+                    <a href="./my_page.html" class="my_page">마이페이지</a>
+                    </div>
+        </nav>
+    
+        <div class="scroll-indicator-container">
+            <div class="scroll-indicator-bar"></div>
+        </div>
+    </header>
+
+
+        <div class="question_box">
+            <h1 class="question">Q1. 여자친구(남자친구)와 첫 1박2일 여행을 가기로 했다 <br>
+            여행 전 날, 어떤 준비를 하는가?
+            </h1>   
+            <img src="./image/menu4_question1_ktx.jpg" alt="ktx" id="question_pic">
+        </div>
+
+        <div class="button_container">
+            <button onclick="selectChoice(true)" class="question_btn">
+                첫 여행 너무 설렌다 !! 내일 가져갈 것 챙겨야지 !!
+            </button>
+            <button onclick="selectChoice(false)" class="question_btn">
+                내일 아침일찍 일어나서 간단하게 짐 싸면 되겠지
+            </button>
+        </div>
+
+
+    <footer id="footer">
+        <div class="footerWrap">
+            <p class="logo">(주) 투어어스 | 팀 Ikuzo | 대표이사 박민영</p>
+            <p class="footer_text">
+            투어어스99빌딩스 | 당곡역 2번출구 247-1, 한국정보교육원 5층<br>
+            사업자등록번호 : 180-45-12345 | 관광사업자등록번호: 제2024-07호
+            </p>
+            <div class="footer_p_wrap">
+            <ul class="footer_lists">
+                <li class="footer_li">개인정보처리방침 |</li>
+                <li class="footer_li">법적고지 |</li>
+                <li class="footer_li">오시는길 |</li>
+                <li class="footer_li">고객문의 |</li>
+                <li class="footer_li">채용문의</li>
+            </ul>
+            <p>All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+    
+    <script>
+        function selectChoice(choice) {
+            let score = parseInt(sessionStorage.getItem('score') || '0', 10);
+
+            // choice 값에 따라 score 값을 증가 또는 감소
+            if (choice === true) {
+                score += 1;
+            } else if (choice === false) {
+                score -= 1;
+            }
+
+            // sessionStorage에 score 값을 저장
+            sessionStorage.setItem('question1_score', score);
+
+            // 다음 페이지로 이동
+            window.location.href = "menu4_question2.html";
+        }
+    </script>
+</body>
+</html>

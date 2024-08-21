@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/common_style.css">
+    <link rel="stylesheet" href="./font/DungGeunMo.ttf">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/menu4_question.css">
+    <title>여행 성향테스트</title>
+</head>
+<body>  
+    <div id="container">
+
+        <div>
+            <h1 id="question">Q6. 결국, 외국인분들과 얘기를 나누게 된 두 사람, <br>
+                어떤 얘기를 나눌 것인가?
+            </h1>
+            <img src="../image/menu4_question6_foreigner.jpg" alt="foreigner" id="question_pic">
+        </div>
+
+        <div class="button_container">
+            <button onclick="selectChoice(true)" class="question_btn">
+                우리나라에 대해 널리 알리고 싶어 !!
+            </button>
+            <button onclick="selectChoice(false)" class="question_btn">
+                해외문화에 대해 알고싶어 ..!
+            </button>
+        </div>
+
+    </div>
+    
+    <script>
+        function selectChoice(choice) {
+            let score = parseInt(sessionStorage.getItem('score') || '0', 10);
+
+            // choice 값에 따라 score 값을 증가 또는 감소
+            if (choice === true) {
+                score += 1;
+            } else if (choice === false) {
+                score -= 1;
+            }
+
+            // sessionStorage에 score 값을 저장
+            sessionStorage.setItem('question6_score', score);
+
+            // 다음 페이지로 이동
+            window.location.href = "menu4_question7.html";
+        }
+    </script>
+</body>
+</html>

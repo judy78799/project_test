@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로젝트 페이지 만들기</title>
+  <link rel="stylesheet" href="./CSS/01_project.css">
+
+  <script>
+    window.onload = function () {  // 페이지가 로딩된 후에 실행되는 함수
+      // 여러 슬라이드 요소를 처리하기 위해서 셀렉터 배열로 만듬
+      const wraps = [
+        '.sec3-mainimg_box_wrap1',
+        '.sec3-mainimg_box_wrap2',
+        '.sec3-mainimg_box_wrap3',
+        '.sec3-mainimg_box_wrap4',
+        '.sec3-mainimg_box_wrap5'
+      ];
+
+      // 각 슬라이드 요소를 처리하기 위한 반복문
+      wraps.forEach(selector => {
+        const wrap = document.querySelector(selector); // 셀렉터로 요소를 선택
+        if (wrap) { // 요소가 존재할 때만 실행
+          const boxes = Array.from(wrap.children); // 자식 요소들을 배열로 변환
+          boxes.forEach(box => {
+            const clone = box.cloneNode(true); // 자식 요소를 복제
+            wrap.appendChild(clone); // 복제한 요소를 원래 요소에 추가
+          });
+
+          let currentIndex = 0; // 현재 슬라이드 인덱스를 0으로 초기화
+
+          function goToSlide(index) {
+            const slideWidth = boxes[0].offsetWidth; // 슬라이드의 길이측정
+            wrap.style.transform = `translateX(${-slideWidth * index}px)`; // 슬라이드를 좌우로 이동시키는 CSS 변환
+          }
+
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % boxes.length; // 다음 슬라이드 인덱스 계산
+            goToSlide(currentIndex); // 다음 슬라이드로 이동
+          }
+
+          wrap.addEventListener('click', nextSlide); // 슬라이드 요소를 클릭하면 다음 슬라이드로 이동
+        }
+      });
+
+      function showSection(idToShow) {
+        // 모든 섹션을 선택
+        const sections = document.querySelectorAll('#sec3-mainimg1, #sec3-mainimg2, #sec3-mainimg3, #sec3-mainimg4, #sec3-mainimg5');
+
+        // 모든 섹션을 숨김 처리
+        sections.forEach(section => {
+          section.classList.add('hidden');
+        });
+
+        // 선택한 섹션만 보이도록 설정
+        document.getElementById(idToShow).classList.remove('hidden');
+      }
+
+      // 페이지 로드 시 기본적으로 'sec3-mainimg1' 섹션을 표시
+      showSection('sec3-mainimg1');
+
+      // '즐거운 공간' 버튼 클릭 시 'sec3-mainimg1' 섹션을 표시
+      document.getElementById('show-enjoyment').addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 링크 동작 방지
+        showSection('sec3-mainimg1'); // 'sec3-mainimg1' 섹션을 표시
+      });
+
+      // '감성 공간' 버튼 클릭 시 'sec3-mainimg2' 섹션을 표시
+      document.getElementById('show-sensibility').addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 링크 동작 방지
+        showSection('sec3-mainimg2'); // 'sec3-mainimg2' 섹션을 표시
+      });
+
+      // '산책 공간' 버튼 클릭 시 'sec3-mainimg3' 섹션을 표시
+      document.getElementById('show-walk').addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 링크 동작 방지
+        showSection('sec3-mainimg3'); // 'sec3-mainimg3' 섹션을 표시
+      });
+
+      // '놀이 공간' 버튼 클릭 시 'sec3-mainimg4' 섹션을 표시
+      document.getElementById('show-play').addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 링크 동작 방지
+        showSection('sec3-mainimg4'); // 'sec3-mainimg4' 섹션을 표시
+      });
+
+      // '힐링 공간' 버튼 클릭 시 'sec3-mainimg5' 섹션을 표시
+      document.getElementById('show-healing').addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 링크 동작 방지
+        showSection('sec3-mainimg5'); // 'sec3-mainimg5' 섹션을 표시
+      });
+
+    }; window.onload = function () {
+      // 슬라이드 요소를 선택하기 위한 셀렉터 배열
+      const wraps = [
+        '.sec3-mainimg_box_wrap1',
+        '.sec3-mainimg_box_wrap2',
+        '.sec3-mainimg_box_wrap3',
+        '.sec3-mainimg_box_wrap4',
+        '.sec3-mainimg_box_wrap5'
+      ];
+
+      // 각 슬라이드 요소를 처리하기 위한 반복문
+      wraps.forEach(selector => {
+        const wrap = document.querySelector(selector); // 셀렉터로 요소를 선택
+        if (wrap) { // 요소가 존재할 때만 실행
+          const boxes = Array.from(wrap.children); // 자식 요소들을 배열로 변환
+          boxes.forEach(box => {
+            const clone = box.cloneNode(true); // 자식 요소를 복제
+            wrap.appendChild(clone); // 복제한 요소를 원래 요소에 추가
+          });
+
+          let currentIndex = 0; // 현재 슬라이드 인덱스를 0으로 초기화
+
+          // 슬라이드를 이동시키는 함수
+          function goToSlide(index) {
+            const slideWidth = boxes[0].offsetWidth; // 슬라이드의 너비 측정
+            wrap.style.transform = `translateX(${-slideWidth * index}px)`; // 슬라이드를 좌우로 이동시키는 CSS 변환
+          }
+
+          // 다음 슬라이드로 이동하는 함수
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % boxes.length; // 다음 슬라이드 인덱스 계산
+            goToSlide(currentIndex); // 다음 슬라이드로 이동
+          }
+
+          // 슬라이드 요소를 클릭하면 다음 슬라이드로 이동
+          wrap.addEventListener('click', nextSlide);
+        }
+      });
+
+      // 특정 섹션을 보이도록 하는 함수
+      function showSection(idToShow) {
+        // 모든 섹션 선택
+        const sections = document.querySelectorAll('#sec3-mainimg1, #sec3-mainimg2, #sec3-mainimg3, #sec3-mainimg4, #sec3-mainimg5');
+
+        // 모든 섹션을 숨김 처리
+        sections.forEach(section => section.classList.add('hidden'));
+
+        // 선택한 섹션만 보이도록 설정
+        document.getElementById(idToShow).classList.remove('hidden');
+      }
+
+      // 페이지 로드 시 기본적으로 'sec3-mainimg1' 섹션을 표시
+      showSection('sec3-mainimg1');
+
+      // 각 div 요소에 클릭 이벤트 추가
+      document.querySelectorAll('.sec3-areas_box1, .sec3-areas_box2, .sec3-areas_box4, .sec3-areas_box6, .sec3-areas_box7').forEach(div => {
+        div.addEventListener('click', function () {
+          // div의 className에서 섹션 ID를 결정
+          const sectionMap = {
+            'sec3-areas_box1': 'sec3-mainimg1',
+            'sec3-areas_box2': 'sec3-mainimg2',
+            'sec3-areas_box4': 'sec3-mainimg3',
+            'sec3-areas_box6': 'sec3-mainimg4',
+            'sec3-areas_box7': 'sec3-mainimg5'
+          };
+
+          // div의 클래스를 기준으로 섹션 ID를 찾음
+          const className = Array.from(this.classList).find(cls => sectionMap[cls]);
+          const sectionId = sectionMap[className]; // 클래스 이름에 해당하는 섹션 ID 찾기
+
+          if (sectionId) {
+            showSection(sectionId); // 해당 섹션을 보이도록 설정
+          }
+        });
+      });
+    };
+
+  </script>
+
+</head>
+
+<body>
+  <section id="sec3">
+
+    <div id="sec3-title">
+      <h1 class="sec3-title-01">님 이런 코스는 어떠세요?</h1>
+    </div>
+
+    <div id="sec3-chucheon">
+      <div class="sec3-chucheon_box-wrap">
+        <img class="sec3-chucheon_box1-01" src="/JABASCRIPT/images/flower.jpg" alt="">
+        <h2 class="sec3-chucheon_box1-02"><span class="sec3-chucheon_box1-03">가보자고,</span><span
+            class="sec3-chucheon_box1-04">추천코스</span>
+          <br><span class="sec3-chucheon_box1-05">감성따라 여행을 즐겨볼까요?</span>
+        </h2>
+      </div>
+    </div>
+
+    <div id="sec3-buttton1">
+      <button class="sec3-buttton1-01" onclick="">
+        <span class="sec3-buttton1-02">▼</span> click <span class="sec3-buttton1-03"></span>
+      </button>
+    </div>
+
+    <div id="sec3-areas">
+
+      <div class="sec3-areas_box-wrap">
+
+        <div class="sec3-areas_box1 center">
+          <a id="show-enjoyment" class="sec3-areas_box1-01" href="#">
+            <span class="sec3-areas_box1-02">즐거운 공간</span>
+          </a>
+        </div>
+
+        <div class="sec3-areas_box2 center">
+          <a id="show-sensibility" class="sec3-areas_box2-01" href="#">
+            <span class="sec3-areas_box2-02">감성 공간</span>
+          </a>
+        </div>
+
+        <div class="sec3-areas_box4 center">
+          <a id="show-walk" class="sec3-areas_box4-01" href="#">
+            <span class="sec3-areas_box4-02">산책 공간</span>
+          </a>
+        </div>
+
+        <div class="sec3-areas_box6 center">
+          <a id="show-play" class="sec3-areas_box6-01" href="#">
+            <span class="sec3-areas_box6-02">놀이 공간</span>
+          </a>
+        </div>
+
+        <div class="sec3-areas_box7 center">
+          <a id="show-healing" class="sec3-areas_box7-01" href="#">
+            <span class="sec3-areas_box7-02">힐링 공간</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="sec3-mainimg1" class="hidden">
+
+      <div class="sec3-mainimg_box_wrap1">
+
+        <div class="sec3-mainimg_box1">
+          <a class="sec3-mainimg_box1-01" href="#">
+            <img class="sec3-mainimg_box1-02" src="/JABASCRIPT/images/tree-1.jpg" alt="">
+            <div class="sec3-mainimg_box1-03">한지 이야기</div>
+            <div class="sec3-mainimg_box1-04"> &rarr; </div>
+            <p class="sec3-mainimg_box1-05">한지와 닥나무의 맥을 이어가는 한지이야기</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box2">
+          <a class="sec3-mainimg_box2-01" href="#">
+            <img class="sec3-mainimg_box2-02" src="/JABASCRIPT/images/tree-2.jpg" alt="">
+            <div class="sec3-mainimg_box2-03">민들레와 달팽이</div>
+            <div class="sec3-mainimg_box2-04"> &rarr; </div>
+            <p class="sec3-mainimg_box2-05">책으로 사람과 사람의 경계를 넘다. 민들레 서점_바로가기</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box3">
+          <a class="sec3-mainimg_box3-01" href="#">
+            <img class="sec3-mainimg_box3-02" src="/JABASCRIPT/images/tree-3.jpg" alt="">
+            <div class="sec3-mainimg_box3-03">외할머니 부엌</div>
+            <div class="sec3-mainimg_box3-04"> &rarr; </div>
+            <p class="sec3-mainimg_box3-05">꽃과 부엌을 사랑하는 외할머니 이야기</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box4">
+          <a class="sec3-mainimg_box4-01" href="#">
+            <img class="sec3-mainimg_box4-02" src="/JABASCRIPT/images/tree-4.jpg" alt="">
+            <div class="sec3-mainimg_box4-03">한국정보교육</div>
+            <div class="sec3-mainimg_box4-04"> &rarr; </div>
+            <p class="sec3-mainimg_box4-05">관악구에 있어요 당곡역 에서 1분거리</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="sec3-mainimg2" class="hidden">
+
+      <div class="sec3-mainimg_box_wrap2">
+
+        <div class="sec3-mainimg_box5">
+          <a class="sec3-mainimg_box5-01" href="#">
+            <img class="sec3-mainimg_box5-02" src="/JABASCRIPT/images/tree-1.jpg" alt="">
+            <div class="sec3-mainimg_box5-03">가렌</div>
+            <div class="sec3-mainimg_box5-04"> &rarr; </div>
+            <p class="sec3-mainimg_box5-05">데마시아</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box6">
+          <a class="sec3-mainimg_box6-01" href="#">
+            <img class="sec3-mainimg_box6-02" src="/JABASCRIPT/images/tree-2.jpg" alt="">
+            <div class="sec3-mainimg_box6-03">블리츠</div>
+            <div class="sec3-mainimg_box6-04"> &rarr; </div>
+            <p class="sec3-mainimg_box6-05">크랭크</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box7">
+          <a class="sec3-mainimg_box7-01" href="#">
+            <img class="sec3-mainimg_box7-02" src="/JABASCRIPT/images/tree-3.jpg" alt="">
+            <div class="sec3-mainimg_box7-03">이블린</div>
+            <div class="sec3-mainimg_box7-04"> &rarr; </div>
+            <p class="sec3-mainimg_box7-05">암살자</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box8">
+          <a class="sec3-mainimg_box8-01" href="#">
+            <img class="sec3-mainimg_box8-02" src="/JABASCRIPT/images/tree-4.jpg" alt="">
+            <div class="sec3-mainimg_box8-03">피즈</div>
+            <div class="sec3-mainimg_box8-04"> &rarr; </div>
+            <p class="sec3-mainimg_box8-05">점심시간이다</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="sec3-mainimg3" class="hidden">
+
+      <div class="sec3-mainimg_box_wrap3">
+
+        <div class="sec3-mainimg_box9">
+          <a class="sec3-mainimg_box9-01" href="#">
+            <img class="sec3-mainimg_box9-02" src="/JABASCRIPT/images/tree-1.jpg" alt="">
+            <div class="sec3-mainimg_box9-03">몰락한 왕의검</div>
+            <div class="sec3-mainimg_box9-04"> &rarr; </div>
+            <p class="sec3-mainimg_box9-05">3800원</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box10">
+          <a class="sec3-mainimg_box10-01" href="#">
+            <img class="sec3-mainimg_box10-02" src="/JABASCRIPT/images/tree-2.jpg" alt="">
+            <div class="sec3-mainimg_box10-03">야스오</div>
+            <div class="sec3-mainimg_box10-04"> &rarr; </div>
+            <p class="sec3-mainimg_box10-05">하세기</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box11">
+          <a class="sec3-mainimg_box11-01" href="#">
+            <img class="sec3-mainimg_box11-02" src="/JABASCRIPT/images/tree-3.jpg" alt="">
+            <div class="sec3-mainimg_box11-03">키네시스</div>
+            <div class="sec3-mainimg_box11-04"> &rarr; </div>
+            <p class="sec3-mainimg_box11-05">어나더렐름</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box12">
+          <a class="sec3-mainimg_box12-01" href="#">
+            <img class="sec3-mainimg_box12-02" src="/JABASCRIPT/images/tree-4.jpg" alt="">
+            <div class="sec3-mainimg_box12-03">아델</div>
+            <div class="sec3-mainimg_box12-04"> &rarr; </div>
+            <p class="sec3-mainimg_box12-05">디바이드</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="sec3-mainimg4" class="hidden">
+
+      <div class="sec3-mainimg_box_wrap4">
+
+        <div class="sec3-mainimg_box13">
+          <a class="sec3-mainimg_box13-01" href="#">
+            <img class="sec3-mainimg_box13-02" src="/JABASCRIPT/images/tree-1.jpg" alt="">
+            <div class="sec3-mainimg_box13-03">검은마법사</div>
+            <div class="sec3-mainimg_box13-04"> &rarr; </div>
+            <p class="sec3-mainimg_box13-05">오리진</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box14">
+          <a class="sec3-mainimg_box14-01" href="#">
+            <img class="sec3-mainimg_box14-02" src="/JABASCRIPT/images/tree-2.jpg" alt="">
+            <div class="sec3-mainimg_box14-03">오라클</div>
+            <div class="sec3-mainimg_box14-04"> &rarr; </div>
+            <p class="sec3-mainimg_box14-05">개사기</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box15">
+          <a class="sec3-mainimg_box15-01" href="#">
+            <img class="sec3-mainimg_box15-02" src="/JABASCRIPT/images/tree-3.jpg" alt="">
+            <div class="sec3-mainimg_box15-03">비에고</div>
+            <div class="sec3-mainimg_box15-04"> &rarr; </div>
+            <p class="sec3-mainimg_box15-05">이졸데</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box16">
+          <a class="sec3-mainimg_box16-01" href="#">
+            <img class="sec3-mainimg_box16-02" src="/JABASCRIPT/images/tree-4.jpg" alt="">
+            <div class="sec3-mainimg_box16-03">바드</div>
+            <div class="sec3-mainimg_box16-04"> &rarr; </div>
+            <p class="sec3-mainimg_box16-05">종소리</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="sec3-mainimg5" class="hidden">
+
+      <div class="sec3-mainimg_box_wrap5">
+
+        <div class="sec3-mainimg_box17">
+          <a class="sec3-mainimg_box17-01" href="#">
+            <img class="sec3-mainimg_box17-02" src="/JABASCRIPT/images/tree-1.jpg" alt="">
+            <div class="sec3-mainimg_box17-03">커피는</div>
+            <div class="sec3-mainimg_box17-04"> &rarr; </div>
+            <p class="sec3-mainimg_box17-05">더벤티</p>
+          </a>
+
+        </div>
+        <div class="sec3-mainimg_box18">
+          <a class="sec3-mainimg_box18-01" href="#">
+            <img class="sec3-mainimg_box18-02" src="/JABASCRIPT/images/tree-2.jpg" alt="">
+            <div class="sec3-mainimg_box18-03">제드</div>
+            <div class="sec3-mainimg_box18-04"> &rarr; </div>
+            <p class="sec3-mainimg_box18-05">리신 쉔</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box19">
+          <a class="sec3-mainimg_box19-01" href="#">
+            <img class="sec3-mainimg_box19-02" src="/JABASCRIPT/images/tree-3.jpg" alt="">
+            <div class="sec3-mainimg_box19-03">아칼리</div>
+            <div class="sec3-mainimg_box19-04"> &rarr; </div>
+            <p class="sec3-mainimg_box19-05">암살챔</p>
+          </a>
+        </div>
+
+        <div class="sec3-mainimg_box20">
+          <a class="sec3-mainimg_box20-01" href="#">
+            <img class="sec3-mainimg_box20-02" src="/JABASCRIPT/images/tree-4.jpg" alt="">
+            <div class="sec3-mainimg_box20-03">미하일</div>
+            <div class="sec3-mainimg_box20-04"> &rarr; </div>
+            <p class="sec3-mainimg_box20-05">로얄가드</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</body>
+
+</html>

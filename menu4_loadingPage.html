@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/menu4_loadingPage.css">
+    <link rel="stylesheet" href="./font/DungGeunMo.ttf">
+    <title>여행 성향테스트</title>
+</head>
+<body>
+    <section class="loading">
+        <h1 class="loading_title">Loading... <br>잠시만 기다려주세요..</h1>
+        <div class="progress_bar" aria-hidden="true">
+            <span class="progressBar_gauge"></span>
+        </div>
+    </section>
+
+    <script>
+        // 로딩이 완료되면 다음 페이지로 이동
+        setTimeout(function() {
+            window.location.href = "menu4_question1.html";
+        }, 3000); // 애니메이션 지속 시간과 일치하게 설정
+    </script>
+</body>
+</html>

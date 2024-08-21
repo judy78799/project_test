@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 화면</title>
+  <link rel="stylesheet" href="./CSS/common_style.css">
+  <link rel="stylesheet" href="./CSS/header.css">
+  <link rel="stylesheet" href="./CSS/login.css">
+  <link rel="stylesheet" href="./CSS/footer.css">
+</head>
+<body>
+  <header id="header">
+    <nav class="nav-bar">
+            <a href="./index.html" id="logo">TourUs</a>
+          
+              <ul class="nav-items">
+                  <li class="nav-item">
+                    <a href="./menu3.html" class="nav-item-font nav_font1">요즘 SNS 맛보기 ▼</a>
+                    <ul class="nav-hover-box">
+                      <li><a href="./menu1_insta.html" class="menu-item">인스타그램</a></li>
+                      <li><a href="./menu1_youtube.html" class="menu-item">유튜브</a></li>
+                      <li><a href="./menu1_naver.html" class="menu-item">네이버 블로그</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item2"><a href="./menu3.html" class="nav-item-font nav_font2">지역별 추천 ▼</a>
+                    <ul class="nav-hover-box2">
+                      <li><a href="./02_jeju.html" class="menu-item">제주</a></li>
+                      <li><a href="./03_busan.html" class="menu-item">부산</a></li>
+                      <li><a href="./04_gang_sog.html" class="menu-item">강릉/속초</a></li>
+                      <li><a href="./05_seoul.html" class="menu-item">서울</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item"><a href="./menu3.html" class="nav-item-font nav_font3">랜덤 주사위</a></li>
+                  <li class="nav-item"><a href="./menu4_mainPage.html" class="nav-item-font nav_font4">나의 여행 Mbti는?</a></li>
+              </ul>
+              <div class="menu_side_list">
+                <a href="./login.html" class="login">로그인/회원가입</a>
+                <a href="./my_page.html" class="my_page">마이페이지</a>
+              </div>
+    </nav>
+    
+    <div class="scroll-indicator-container">
+        <div class="scroll-indicator-bar"></div>
+    </div>
+</header>
+
+  <div id="container">
+    
+    <div class="login-box">
+    <h1 class="login-title">로그인</h1>
+    <p class="login-info">투어어스에 오신 것을 환영합니다.</p>
+
+    <div class="loginMenu-wrap">
+      <div class="loginMenu">
+        <label for="">아이디</label><input type="text" name="id" class="user-id-pwd"><br>
+        <label for="">비밀번호</label><input type="password" name="pw" class="user-id-pwd"><br>
+      </div>
+
+        <div class="buttons">
+          <input type="submit" value="로그인" placeholder="ID" onclick="loginCheck(); return false;" class="login-btn">
+          <input type="reset" value="취소" placeholder="PASSWORD" class="login-btn">
+        </div>
+
+        <div class="register">
+          <input type="button" value="회원가입" onclick="registerGo()" class="register-btn">
+        </div>
+    </div>
+  </div>
+</div>
+<footer id="footer">
+  <div class="footerWrap">
+    <p class="logo">(주) 투어어스 | 팀 Ikuzo | 대표이사 박민영</p>
+    <p class="footer_text">
+      투어어스99빌딩스 | 당곡역 2번출구 247-1, 한국정보교육원 5층<br>
+      사업자등록번호 : 180-45-12345 | 관광사업자등록번호: 제2024-07호
+    </p>
+    <div class="footer_p_wrap">
+      <ul class="footer_lists">
+        <li class="footer_li">개인정보처리방침 |</li>
+        <li class="footer_li">법적고지 |</li>
+        <li class="footer_li">오시는길 |</li>
+        <li class="footer_li">고객문의 |</li>
+        <li class="footer_li">채용문의</li>
+      </ul>
+      <p>All rights reserved</p>
+    </div>
+</div>
+</footer>
+
+<script src="./Javascript/header.js"></script>
+  <script>
+  function registerGo() {
+    window.location.href = "register.html"; 
+  }
+
+  function loginCheck() {
+    const id = document.querySelector("input[name='id']").value;
+    const pw = document.querySelector("input[name='pw']").value;
+
+    
+    if (id === "" || pw === "") {
+      alert("아이디와 비밀번호를 입력해 주시기 바랍니다.");
+      return false;   
+    }
+      alert("로그인 성공!");
+      //헤더 바꿔줘~~
+      window.location.href = "./index.html";
+      return true; // 유효성 검사 성공
+    }
+  </script>
+</body>
+</html>
